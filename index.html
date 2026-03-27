@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MuHui Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between">
+      <h1 class="font-semibold">MuHui Portfolio</h1>
+      <div class="space-x-6 text-sm">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="h-screen flex items-center justify-center text-center px-6">
+    <div>
+      <h2 class="text-5xl font-semibold mb-6">Urban Design · Game Environments · Spatial Experience</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Translating real-world spatial logic into immersive interactive worlds.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section id="work" class="max-w-6xl mx-auto px-6 py-24">
+    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Featured</h3>
+
+    <!-- Industrial Renewal -->
+    <div class="mb-20 cursor-pointer" onclick="openProject('p1')">
+      <img src="./images/project1.jpg" class="w-full h-[500px] object-cover mb-6" />
+      <h2 class="text-2xl font-semibold">Industrial Building Regeneration</h2>
+      <p class="text-gray-500">Adaptive reuse & urban renewal strategy</p>
+    </div>
+
+    <!-- Cultural Center -->
+    <div class="mb-24 cursor-pointer" onclick="openProject('p2')">
+      <img src="./images/project2.jpg" class="w-full h-[500px] object-cover mb-6" />
+      <h2 class="text-2xl font-semibold">Urban Cultural Center</h2>
+      <p class="text-gray-500">Public space & civic architecture design</p>
+    </div>
+
+    <!-- RESEARCH GROUP -->
+    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Urban Research</h3>
+    <div class="grid md:grid-cols-2 gap-12 mb-24">
+
+      <div onclick="openProject('p3')" class="cursor-pointer">
+        <img src="./images/project3.jpg" class="mb-4" />
+        <h4 class="font-medium">POI-based Land Use Planning</h4>
+      </div>
+
+      <div onclick="openProject('p4')" class="cursor-pointer">
+        <img src="./images/project4.jpg" class="mb-4" />
+        <h4 class="font-medium">Residential Site Selection (POI)</h4>
+      </div>
+
+    </div>
+
+    <!-- CONSERVATION -->
+    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Conservation</h3>
+    <div class="grid md:grid-cols-2 gap-12 mb-24">
+
+      <div onclick="openProject('p5')" class="cursor-pointer">
+        <img src="./images/project5.jpg" class="mb-4" />
+        <h4 class="font-medium">Historic Preservation Guidelines</h4>
+      </div>
+
+    </div>
+
+    <!-- OTHER -->
+    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Other Works</h3>
+    <div class="grid md:grid-cols-2 gap-12">
+
+      <div onclick="openProject('p6')" class="cursor-pointer">
+        <img src="./images/project6.jpg" class="mb-4" />
+        <h4 class="font-medium">VR Garden Interface Design</h4>
+      </div>
+
+      <div onclick="openProject('p7')" class="cursor-pointer">
+        <img src="./images/project7.jpg" class="mb-4" />
+        <h4 class="font-medium">Other Explorations</h4>
+      </div>
+
+    </div>
+  </section>
+
+<!-- ABOUT -->
+<section id="about" class="max-w-3xl mx-auto px-6 py-32">
+
+  <h3 class="text-2xl mb-12">About</h3>
+
+  <div class="space-y-10 text-gray-700 leading-relaxed">
+
+    <!-- Education -->
+    <div>
+      <h4 class="text-lg font-semibold mb-2">Education</h4>
+      <p>
+        2019.08 - 2023.06<br>
+        Tsinghua University · Architecture
+      </p>
+      <p class="mt-2">
+        2024.08 - Present<br>
+        Tsinghua University · Urban Planning
+      </p>
+    </div>
+
+    <!-- Focus -->
+    <div>
+      <h4 class="text-lg font-semibold mb-2">Focus</h4>
+      <p>
+        Urban Heritage Conservation & Regeneration
+      </p>
+    </div>
+
+    <!-- Academic -->
+    <div>
+      <h4 class="text-lg font-semibold mb-2">Academic Performance</h4>
+      <p>
+        GPA: 4.0 / 4.0<br>
+        Rank: 1 / 104 (School of Architecture)
+      </p>
+    </div>
+
+    <!-- Skills -->
+    <div>
+      <h4 class="text-lg font-semibold mb-2">Skills</h4>
+      <p>
+        Blender · Rhino · SketchUp · UE5 (basic)<br>
+        Adobe PS / AI / ID · Microsoft Office
+      </p>
+    </div>
+
+    <!-- Strengths -->
+    <div>
+      <h4 class="text-lg font-semibold mb-2">Strengths</h4>
+      <p>
+        Bridging architectural design and game environments, with a focus on spatial storytelling, scene composition, and immersive experience.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 class="text-lg font-semibold mb-2">Contact</h4>
+      <p>
+        1259400754@qq.com
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- MODAL -->
+  <div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
+    <div class="bg-white max-w-4xl w-full p-8 overflow-y-auto max-h-[90vh]">
+      <button onclick="closeProject()" class="mb-4 text-sm">Close</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script>
+    const projects = {
+      p1: `
+        <h2 class="text-2xl mb-6">Eco——Electricity + Community → Ecosystem</h2>
+
+        <img src="./images/project1.jpg" class="w-full mb-6"/>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/industrial-01.jpg">
+          <img src="./images/industrial-02.jpg">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/industrial-03.jpg">
+          <img src="./images/industrial-04.jpg">
+        </div>
+      `,
+
+      p2: `
+        <h2 class="text-2xl mb-6">河墟印象——馆园街共生的泛文化中心设计</h2>
+
+       <p class="text-sm text-gray-400 mb-6">
+         Urban Design · Instructor: 钟舸 / 黄鹤
+       </p>
+
+        <img src="./images/project2.jpg" class="w-full mb-6"/>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/cultural-01.jpg">
+          <img src="./images/cultural-02.jpg">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/cultural-03.jpg">
+          <img src="./images/cultural-04.jpg">
+        </div>
+
+        <h3 class="text-lg mb-2">Context</h3>
+        <p class="text-gray-600 mb-6">
+            项目位于广州市荔湾区白鹅潭片区，连接沙面岛与海珠区，处于“三江六岸”关键节点。场地具有多重水系与历史空间交织的特征，为构建连续的空间体验与叙事提供了基础。
+        </p>
+
+        <h3 class="text-lg mb-2">Concept</h3>
+        <p class="text-gray-600 mb-6">
+            以“馆—园—街”为核心结构，将文化设施、历史园林与在地街巷系统整合为一体。通过提取河涌肌理与街巷网络作为主要空间线索，组织连续的动线与层次化空间体验，形成文化与日常活动交织的环境叙事。
+        </p>
+
+        <h3 class="text-lg mb-2">Strategy</h3>
+        <p class="text-gray-600 mb-6">
+            设计围绕三项策略展开：延展“馆”的轴线以强化空间引导，打破“园”的边界以提升可达性，构建“街”与水系的共生关系以激活公共活动。同时通过阶段性更新策略，协调不同空间要素的生长与叠加，增强整体系统的可持续性与适应性。
+        </p>
+
+        <h3 class="text-lg mb-2">Outcome</h3>
+        <p class="text-gray-600">
+            形成一个融合文化展示、公共活动与历史空间的复合型场景系统。项目强化了区域的空间识别与文化表达，同时构建了具有连续体验与多样互动的公共环境。
+        </p>
+      `,
+
+      p3: `
+        <h2 class="text-2xl mb-6">POI-based Land Use Planning</h2>
+
+        <img src="./images/poi-cover.jpg" class="w-full mb-6"/>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/poi-01.jpg" class="w-full h-[250px] object-cover"/>
+          <img src="./images/poi-02.jpg" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/poi-03.jpg" class="w-full h-[250px] object-cover"/>
+          <img src="./images/poi-04.jpg" class="w-full h-[250px] object-cover"/>
+        </div> 
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/poi-05.jpg" class="w-full h-[250px] object-cover"/>
+          <img src="./images/poi-06.jpg" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/poi-07.jpg" class="w-full h-[250px] object-cover"/>
+          <img src="./images/poi-08.jpg" class="w-full h-[250px] object-cover"/>
+        </div> 
+
+        <h3 class="text-lg mb-2">POI analysis</h3>
+        <p class="text-gray-600 mb-6">
+            通过多类型POI数据分析, 对城市功能进行分类与权重识别, 提取核心活动节点与空间分布特征, 界定由历史文化区与CBD构成的高强度功能核心区。基于分析结果, 将整体空间转化为“三层级”结构系统: 内层强化核心体验与功能密度, 中层引导扩展与集聚, 外层组织基础支撑与生态协调, 从而形成清晰的空间梯度与功能递进关系。在此基础上, 对机会用地进行阶段性布局与策略分配, 为后续空间设计提供可执行的结构框架与发展路径。
+        </p>
+      `,
+
+      p4: `
+        <h2 class="text-2xl mb-6">Residential Site Selection (POI)</h2>
+
+        <img src="./images/residential-cover.png" class="w-full mb-6"/>
+        <img src="./images/residential-01.png" class="w-full mb-6"/>
+        <img src="./images/residential-02.png" class="w-full mb-6"/>
+      `,
+
+      p5: `
+        <h2 class="text-2xl mb-6">Historic Preservation Guidelines</h2>
+
+        <img src="./images/project5.jpg" class="w-full mb-6"/>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-01.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-02.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-03.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-04.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-05.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-06.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-07.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-08.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-09.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-10.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-11.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-12.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-13.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-14.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-15.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-16.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-17.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-18.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/preservation-19.png" class="w-full h-[250px] object-cover"/>
+          <img src="./images/preservation-20.png" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <h3 class="text-lg mb-2">历史建筑保护图则编制</h3>
+        <p class="text-gray-600 mb-6">
+            参与历史建筑保护图则的编制，通过历史研究与实地调研，提取并定义建筑中的关键价值要素。在此基础上，从保护与更新的双重视角，将抽象的价值判断转化为清晰的规则体系与空间引导策略。项目重点在于将复杂信息进行结构化与可视化表达，通过图示、标注与影像等多种方式，构建直观的信息传达体系，以支持空间理解与后续设计应用。
+        </p>
+      `,
+
+      p6: `
+        <h2 class="text-2xl mb-6">VR Garden Interface Design</h2>
+
+        <img src="./images/vr-cover.jpg" class="w-full mb-6"/>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/vr-01.jpg" class="w-full h-[250px] object-cover"/>
+          <img src="./images/vr-02.jpg" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/vr-03.jpg" class="w-full h-[250px] object-cover"/>
+          <img src="./images/vr-04.jpg" class="w-full h-[250px] object-cover"/>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <img src="./images/vr-05.jpg" class="w-full h-[250px] object-cover"/>
+          <img src="./images/vr-06.jpg" class="w-full h-[250px] object-cover"/>
+        </div>        
+      `,
+
+      p7: `
+        <h2 class="text-2xl mb-6">Other Works</h2>
+
+        <img src="./images/other-cover.jpg" class="w-full mb-6"/>
+        <img src="./images/other-01.jpg" class="w-full mb-6"/>
+        <img src="./images/other-02.jpg" class="w-full mb-6"/>        
+        <img src="./images/other-03.jpg" class="w-full mb-6"/>    
+      `
+    }
+
+    function openProject(id) {
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modal').classList.add('flex');
+      document.getElementById('modal-content').innerHTML = projects[id];
+    }
+
+    function closeProject() {
+      document.getElementById('modal').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
