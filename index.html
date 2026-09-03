@@ -4,93 +4,95 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MuHui Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-<body class="bg-white text-gray-900">
+<body>
 
   <!-- NAV -->
-  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between">
+  <header class="site-header">
+    <div class="site-nav page-width">
       <h1 class="font-semibold">MuHui Portfolio</h1>
-      <div class="space-x-6 text-sm">
+      <nav aria-label="Main navigation">
         <a href="#work">Work</a>
         <a href="#about">About</a>
-      </div>
+      </nav>
     </div>
   </header>
 
+  <main>
+
   <!-- HERO -->
-  <section class="h-screen flex items-center justify-center text-center px-6">
+  <section class="hero page-width">
     <div>
-      <h2 class="text-5xl font-semibold mb-6">Urban Design · Game Environments · Spatial Experience</h2>
-      <p class="text-gray-500 max-w-xl mx-auto">Translating real-world spatial logic into immersive interactive worlds.</p>
+      <h2 class="hero-title">Urban Design · Game Environments · Spatial Experience</h2>
+      <p class="hero-description">Translating real-world spatial logic into immersive interactive worlds.</p>
     </div>
   </section>
 
   <!-- FEATURED PROJECT -->
-  <section id="work" class="max-w-6xl mx-auto px-6 py-24">
-    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Featured</h3>
+  <section id="work" class="work page-width">
+    <h3 class="section-label">Featured</h3>
 
     <!-- Industrial Renewal -->
-    <div class="mb-20 cursor-pointer" onclick="openProject('p1')">
-      <img src="./images/project1.jpg" class="w-full h-[500px] object-cover mb-6" />
+    <a class="project-card featured-project" href="#project-p1" data-project="p1" aria-haspopup="dialog" aria-controls="modal">
+      <img src="./images/project1.jpg" class="w-full mb-6" width="1920" height="1080" alt="Industrial Building Regeneration — cover" loading="eager" decoding="async">
       <h2 class="text-2xl font-semibold">Industrial Building Regeneration</h2>
       <p class="text-gray-500">Adaptive reuse & urban renewal strategy</p>
-    </div>
+    </a>
 
     <!-- Cultural Center -->
-    <div class="mb-24 cursor-pointer" onclick="openProject('p2')">
-      <img src="./images/project2.jpg" class="w-full h-[500px] object-cover mb-6" />
+    <a class="project-card featured-project" href="#project-p2" data-project="p2" aria-haspopup="dialog" aria-controls="modal">
+      <img src="./images/project2.jpg" class="w-full mb-6" width="1920" height="1080" alt="Urban Cultural Center — cover" loading="lazy" decoding="async">
       <h2 class="text-2xl font-semibold">Urban Cultural Center</h2>
       <p class="text-gray-500">Public space & civic architecture design</p>
-    </div>
+    </a>
 
     <!-- RESEARCH GROUP -->
-    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Urban Research</h3>
-    <div class="grid md:grid-cols-2 gap-12 mb-24">
+    <h3 class="section-label">Urban Research</h3>
+    <div class="grid grid-cols-1 gap-12 mb-24">
 
-      <div onclick="openProject('p3')" class="cursor-pointer">
-        <img src="./images/project3.jpg" class="mb-4" />
+      <a class="project-card" href="#project-p3" data-project="p3" aria-haspopup="dialog" aria-controls="modal">
+        <img src="./images/project3.jpg" class="mb-4" width="1920" height="1080" alt="POI-based Land Use Planning — cover" loading="lazy" decoding="async">
         <h4 class="font-medium">POI-based Land Use Planning</h4>
-      </div>
+      </a>
 
-      <div onclick="openProject('p4')" class="cursor-pointer">
-        <img src="./images/project4.jpg" class="mb-4" />
+      <a class="project-card" href="#project-p4" data-project="p4" aria-haspopup="dialog" aria-controls="modal">
+        <img src="./images/project4.jpg" class="mb-4" width="1920" height="1080" alt="Residential Site Selection — cover" loading="lazy" decoding="async">
         <h4 class="font-medium">Residential Site Selection (POI)</h4>
-      </div>
+      </a>
 
     </div>
 
     <!-- CONSERVATION -->
-    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Conservation</h3>
-    <div class="grid md:grid-cols-2 gap-12 mb-24">
+    <h3 class="section-label">Conservation</h3>
+    <div class="grid grid-cols-1 gap-12 mb-24">
 
-      <div onclick="openProject('p5')" class="cursor-pointer">
-        <img src="./images/project5.jpg" class="mb-4" />
+      <a class="project-card" href="#project-p5" data-project="p5" aria-haspopup="dialog" aria-controls="modal">
+        <img src="./images/project5.jpg" class="mb-4" width="1920" height="1080" alt="Historic Preservation Guidelines — cover" loading="lazy" decoding="async">
         <h4 class="font-medium">Historic Preservation Guidelines</h4>
-      </div>
+      </a>
 
     </div>
 
     <!-- OTHER -->
-    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Other Works</h3>
-    <div class="grid md:grid-cols-2 gap-12">
+    <h3 class="section-label">Other Works</h3>
+    <div class="grid grid-cols-1 gap-12">
 
-      <div onclick="openProject('p6')" class="cursor-pointer">
-        <img src="./images/project6.jpg" class="mb-4" />
+      <a class="project-card" href="#project-p6" data-project="p6" aria-haspopup="dialog" aria-controls="modal">
+        <img src="./images/project6.jpg" class="mb-4" width="1920" height="1080" alt="VR Garden Interface Design — cover" loading="lazy" decoding="async">
         <h4 class="font-medium">VR Garden Interface Design</h4>
-      </div>
+      </a>
 
-      <div onclick="openProject('p7')" class="cursor-pointer">
-        <img src="./images/project7.jpg" class="mb-4" />
+      <a class="project-card" href="#project-p7" data-project="p7" aria-haspopup="dialog" aria-controls="modal">
+        <img src="./images/project7.jpg" class="mb-4" width="1920" height="1080" alt="Other Explorations — cover" loading="lazy" decoding="async">
         <h4 class="font-medium">Other Explorations</h4>
-      </div>
+      </a>
 
     </div>
   </section>
 
 <!-- ABOUT -->
-<section id="about" class="max-w-3xl mx-auto px-6 py-32">
+<section id="about" class="about page-width">
 
   <h3 class="text-2xl mb-12">About</h3>
 
@@ -131,7 +133,7 @@
       <h4 class="text-lg font-semibold mb-2">Skills</h4>
       <p>
         Blender · Rhino · SketchUp · UE5 (basic)<br>
-        Adobe PS / AI / ID · Microsoft Office
+        Adobe PS / AI / ID · Microsoft Office · Unity · Godot
       </p>
     </div>
 
@@ -155,29 +157,51 @@
 
 </section>
 
-  <!-- MODAL -->
-  <div id="modal" class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50">
-    <div class="bg-white max-w-4xl w-full p-8 overflow-y-auto max-h-[90vh]">
-      <button onclick="closeProject()" class="mb-4 text-sm">Close</button>
+  </main>
+
+  <!-- Project reading view: toolbar stays visible while the images scroll. -->
+  <dialog id="modal" aria-labelledby="project-title">
+    <div class="modal-toolbar">
+      <span class="modal-label">Project details</span>
+      <button id="close-project" type="button" autofocus aria-label="Close project">Close <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="modal-scroll">
       <div id="modal-content"></div>
     </div>
-  </div>
+  </dialog>
 
   <script>
     const projects = {
       p1: `
         <h2 class="text-2xl mb-6">Eco——Electricity + Community → Ecosystem</h2>
 
-        <img src="./images/project1.jpg" class="w-full mb-6"/>
+        <video class="project-video" controls playsinline preload="metadata" poster="./images/industrial.jpg" width="854" height="480">
+          <source src="./videos/industrial.mp4" type="video/mp4">
+          Your browser cannot play this video. <a href="./videos/industrial.mp4">Download the project video</a>.
+        </video>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/industrial-01.jpg">
-          <img src="./images/industrial-02.jpg">
+        <img src="./images/project1.jpg" class="w-full mb-6" width="1920" height="1080" alt="Industrial Building Regeneration — cover" loading="lazy" decoding="async">
+
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/industrial-01.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 1" loading="lazy" decoding="async">
+          <img src="./images/industrial-02.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 2" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/industrial-03.jpg">
-          <img src="./images/industrial-04.jpg">
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/industrial-03.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 3" loading="lazy" decoding="async">
+          <img src="./images/industrial-04.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 4" loading="lazy" decoding="async">
+        </div>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/industrial-05.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 5" loading="lazy" decoding="async">
+          <img src="./images/industrial-06.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 6" loading="lazy" decoding="async">
+          <img src="./images/industrial-07.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 7" loading="lazy" decoding="async">
+          <img src="./images/industrial-08.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 8" loading="lazy" decoding="async">
+          <img src="./images/industrial-09.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 9" loading="lazy" decoding="async">
+          <img src="./images/industrial-10.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 10" loading="lazy" decoding="async">
+          <img src="./images/industrial-11.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 11" loading="lazy" decoding="async">
+          <img src="./images/industrial-12.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 12" loading="lazy" decoding="async">
+          <img src="./images/industrial-13.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 13" loading="lazy" decoding="async">
+          <img src="./images/industrial-14.jpg" width="5760" height="3240" alt="Industrial Building Regeneration — sheet 14" loading="lazy" decoding="async">
         </div>
       `,
 
@@ -188,16 +212,16 @@
          Urban Design · Instructor: 钟舸 / 黄鹤
        </p>
 
-        <img src="./images/project2.jpg" class="w-full mb-6"/>
+        <img src="./images/project2.jpg" class="w-full mb-6" width="1920" height="1080" alt="Urban Cultural Center — cover" loading="lazy" decoding="async">
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/cultural-01.jpg">
-          <img src="./images/cultural-02.jpg">
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/cultural-01.jpg" width="3507" height="4966" alt="Urban Cultural Center — sheet 1" loading="lazy" decoding="async">
+          <img src="./images/cultural-02.jpg" width="3507" height="4966" alt="Urban Cultural Center — sheet 2" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/cultural-03.jpg">
-          <img src="./images/cultural-04.jpg">
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/cultural-03.jpg" width="3507" height="4966" alt="Urban Cultural Center — sheet 3" loading="lazy" decoding="async">
+          <img src="./images/cultural-04.jpg" width="3507" height="4966" alt="Urban Cultural Center — sheet 4" loading="lazy" decoding="async">
         </div>
 
         <h3 class="text-lg mb-2">Context</h3>
@@ -224,26 +248,26 @@
       p3: `
         <h2 class="text-2xl mb-6">POI-based Land Use Planning</h2>
 
-        <img src="./images/poi-cover.jpg" class="w-full mb-6"/>
+        <img src="./images/poi-cover.jpg" class="w-full mb-6" width="4096" height="2731" alt="POI-based Land Use Planning — cover" loading="lazy" decoding="async">
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/poi-01.jpg" class="w-full h-[250px] object-cover"/>
-          <img src="./images/poi-02.jpg" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/poi-01.jpg" class="w-full" width="1124" height="704" alt="POI-based Land Use Planning — sheet 1" loading="lazy" decoding="async">
+          <img src="./images/poi-02.jpg" class="w-full" width="1140" height="696" alt="POI-based Land Use Planning — sheet 2" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/poi-03.jpg" class="w-full h-[250px] object-cover"/>
-          <img src="./images/poi-04.jpg" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/poi-03.jpg" class="w-full" width="1132" height="684" alt="POI-based Land Use Planning — sheet 3" loading="lazy" decoding="async">
+          <img src="./images/poi-04.jpg" class="w-full" width="281" height="170" alt="POI-based Land Use Planning — sheet 4" loading="lazy" decoding="async">
         </div> 
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/poi-05.jpg" class="w-full h-[250px] object-cover"/>
-          <img src="./images/poi-06.jpg" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/poi-05.jpg" class="w-full" width="1144" height="696" alt="POI-based Land Use Planning — sheet 5" loading="lazy" decoding="async">
+          <img src="./images/poi-06.jpg" class="w-full" width="1160" height="696" alt="POI-based Land Use Planning — sheet 6" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/poi-07.jpg" class="w-full h-[250px] object-cover"/>
-          <img src="./images/poi-08.jpg" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/poi-07.jpg" class="w-full" width="4126" height="3813" alt="POI-based Land Use Planning — sheet 7" loading="lazy" decoding="async">
+          <img src="./images/poi-08.jpg" class="w-full" width="4126" height="3813" alt="POI-based Land Use Planning — sheet 8" loading="lazy" decoding="async">
         </div> 
 
         <h3 class="text-lg mb-2">POI analysis</h3>
@@ -255,64 +279,64 @@
       p4: `
         <h2 class="text-2xl mb-6">Residential Site Selection (POI)</h2>
 
-        <img src="./images/residential-cover.png" class="w-full mb-6"/>
-        <img src="./images/residential-01.png" class="w-full mb-6"/>
-        <img src="./images/residential-02.png" class="w-full mb-6"/>
+        <img src="./images/residential-cover.png" class="w-full mb-6" width="1392" height="378" alt="Residential Site Selection — cover" loading="lazy" decoding="async">
+        <img src="./images/residential-01.png" class="w-full mb-6" width="702" height="722" alt="Residential Site Selection — sheet 1" loading="lazy" decoding="async">
+        <img src="./images/residential-02.png" class="w-full mb-6" width="702" height="726" alt="Residential Site Selection — sheet 2" loading="lazy" decoding="async">
       `,
 
       p5: `
         <h2 class="text-2xl mb-6">Historic Preservation Guidelines</h2>
 
-        <img src="./images/project5.jpg" class="w-full mb-6"/>
+        <img src="./images/project5.jpg" class="w-full mb-6" width="1920" height="1080" alt="Historic Preservation Guidelines — cover" loading="lazy" decoding="async">
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-01.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-02.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-01.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 1" loading="lazy" decoding="async">
+          <img src="./images/preservation-02.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 2" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-03.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-04.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-03.png" class="w-full" width="4960" height="3507" alt="Historic Preservation Guidelines — sheet 3" loading="lazy" decoding="async">
+          <img src="./images/preservation-04.png" class="w-full" width="4960" height="3507" alt="Historic Preservation Guidelines — sheet 4" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-05.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-06.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-05.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 5" loading="lazy" decoding="async">
+          <img src="./images/preservation-06.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 6" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-07.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-08.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-07.png" class="w-full" width="1238" height="876" alt="Historic Preservation Guidelines — sheet 7" loading="lazy" decoding="async">
+          <img src="./images/preservation-08.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 8" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-09.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-10.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-09.png" class="w-full" width="1238" height="876" alt="Historic Preservation Guidelines — sheet 9" loading="lazy" decoding="async">
+          <img src="./images/preservation-10.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 10" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-11.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-12.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-11.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 11" loading="lazy" decoding="async">
+          <img src="./images/preservation-12.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 12" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-13.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-14.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-13.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 13" loading="lazy" decoding="async">
+          <img src="./images/preservation-14.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 14" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-15.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-16.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-15.png" class="w-full" width="1238" height="876" alt="Historic Preservation Guidelines — sheet 15" loading="lazy" decoding="async">
+          <img src="./images/preservation-16.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 16" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-17.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-18.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-17.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 17" loading="lazy" decoding="async">
+          <img src="./images/preservation-18.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 18" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/preservation-19.png" class="w-full h-[250px] object-cover"/>
-          <img src="./images/preservation-20.png" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/preservation-19.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 19" loading="lazy" decoding="async">
+          <img src="./images/preservation-20.png" class="w-full" width="2479" height="1753" alt="Historic Preservation Guidelines — sheet 20" loading="lazy" decoding="async">
         </div>
 
         <h3 class="text-lg mb-2">历史建筑保护图则编制</h3>
@@ -324,43 +348,71 @@
       p6: `
         <h2 class="text-2xl mb-6">VR Garden Interface Design</h2>
 
-        <img src="./images/vr-cover.jpg" class="w-full mb-6"/>
+        <img src="./images/vr-cover.jpg" class="w-full mb-6" width="5760" height="3240" alt="VR Garden Interface Design — cover" loading="lazy" decoding="async">
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/vr-01.jpg" class="w-full h-[250px] object-cover"/>
-          <img src="./images/vr-02.jpg" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/vr-01.jpg" class="w-full" width="5760" height="3240" alt="VR Garden Interface Design — sheet 1" loading="lazy" decoding="async">
+          <img src="./images/vr-02.jpg" class="w-full" width="5760" height="3240" alt="VR Garden Interface Design — sheet 2" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/vr-03.jpg" class="w-full h-[250px] object-cover"/>
-          <img src="./images/vr-04.jpg" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/vr-03.jpg" class="w-full" width="5760" height="3240" alt="VR Garden Interface Design — sheet 3" loading="lazy" decoding="async">
+          <img src="./images/vr-04.jpg" class="w-full" width="5760" height="3240" alt="VR Garden Interface Design — sheet 4" loading="lazy" decoding="async">
         </div>
 
-        <div class="grid grid-cols-2 gap-4 mb-6">
-          <img src="./images/vr-05.jpg" class="w-full h-[250px] object-cover"/>
-          <img src="./images/vr-06.jpg" class="w-full h-[250px] object-cover"/>
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <img src="./images/vr-05.jpg" class="w-full" width="5760" height="3240" alt="VR Garden Interface Design — sheet 5" loading="lazy" decoding="async">
+          <img src="./images/vr-06.jpg" class="w-full" width="5760" height="3240" alt="VR Garden Interface Design — sheet 6" loading="lazy" decoding="async">
         </div>        
       `,
 
       p7: `
         <h2 class="text-2xl mb-6">Other Works</h2>
 
-        <img src="./images/other-cover.jpg" class="w-full mb-6"/>
-        <img src="./images/other-01.jpg" class="w-full mb-6"/>
-        <img src="./images/other-02.jpg" class="w-full mb-6"/>        
-        <img src="./images/other-03.jpg" class="w-full mb-6"/>    
+        <img src="./images/other-cover.jpg" class="w-full mb-6" width="1002" height="741" alt="Other Works — cover" loading="lazy" decoding="async">
+        <img src="./images/other-01.jpg" class="w-full mb-6" width="9524" height="6735" alt="Other Works — sheet 1" loading="lazy" decoding="async">
+        <img src="./images/other-02.jpg" class="w-full mb-6" width="9524" height="6735" alt="Other Works — sheet 2" loading="lazy" decoding="async">
+        <img src="./images/other-03.jpg" class="w-full mb-6" width="9524" height="6735" alt="Other Works — sheet 3" loading="lazy" decoding="async">
       `
     }
 
-    function openProject(id) {
-      document.getElementById('modal').classList.remove('hidden');
-      document.getElementById('modal').classList.add('flex');
-      document.getElementById('modal-content').innerHTML = projects[id];
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalScroll = modal.querySelector('.modal-scroll');
+    const closeButton = document.getElementById('close-project');
+    let returnFocus = null;
+    let pageScroll = 0;
+
+    function openProject(id, trigger) {
+      if (!Object.prototype.hasOwnProperty.call(projects, id)) return;
+      returnFocus = trigger;
+      pageScroll = window.scrollY;
+      modalContent.innerHTML = projects[id];
+      modalContent.querySelector('h2').id = 'project-title';
+      modalContent.querySelector('img').loading = 'eager';
+      // Lock the page without losing the visitor's position on mobile.
+      document.body.style.top = '-' + pageScroll + 'px';
+      document.body.classList.add('project-open');
+      modal.showModal();
+      modalScroll.scrollTop = 0;
+      closeButton.focus({ preventScroll: true });
     }
 
-    function closeProject() {
-      document.getElementById('modal').classList.add('hidden');
-    }
+    document.querySelectorAll('[data-project]').forEach(trigger => {
+      trigger.addEventListener('click', event => {
+        event.preventDefault();
+        openProject(trigger.dataset.project, trigger);
+      });
+    });
+
+    closeButton.addEventListener('click', () => modal.close());
+    modal.addEventListener('close', () => {
+      document.body.classList.remove('project-open');
+      document.body.style.top = '';
+      window.scrollTo(0, pageScroll);
+      modalContent.replaceChildren();
+      if (returnFocus) returnFocus.focus({ preventScroll: true });
+    });
   </script>
 
 </body>
