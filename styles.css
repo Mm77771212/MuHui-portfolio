@@ -77,7 +77,10 @@ body.project-open { position: fixed; width: 100%; overflow: hidden; }
 #modal-content { min-width: 0; overflow-wrap: anywhere; }
 #modal-content h2 { font-weight: 500; letter-spacing: -.02em; }
 #modal-content h3 { font-weight: 600; margin-top: 32px; }
+#modal-content .breakdown-subheading { margin: 24px 0 8px; font-size: 16px; font-weight: 600; }
 #modal-content p { line-height: 1.8; }
+#modal-content .breakdown-list { display: grid; gap: 10px; margin-top: 0; padding-left: 1.25em; line-height: 1.8; }
+#modal-content .figure-caption { margin: 8px 0 32px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 #modal-content .project-video { margin-bottom: clamp(20px, 3vw, 32px); }
 #modal-content .mb-6 { margin-bottom: clamp(20px, 3vw, 32px); }
 @media (max-width: 600px) {
