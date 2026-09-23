@@ -51,6 +51,12 @@
     <h3 class="section-label">Game &amp; Level Design</h3>
     <div class="grid grid-cols-1 gap-12 mb-24">
 
+      <a class="project-card" href="#project-p11" data-project="p11" aria-haspopup="dialog" aria-controls="modal">
+        <img src="./images/gameplay-demo-level-2-poster.jpg" class="mb-4" width="1280" height="720" alt="Gameplay Demo Validation — spatial reconstruction puzzle" loading="lazy" decoding="async">
+        <h4 class="font-medium">Gameplay Demo Validation</h4>
+        <p class="text-gray-500">Puzzle mechanics · route design · prototype validation</p>
+      </a>
+
       <a class="project-card" href="#project-p8" data-project="p8" aria-haspopup="dialog" aria-controls="modal">
         <img src="./images/game-ashen-chapel-01.webp" class="mb-4" width="2400" height="1500" alt="Ashen Chapel courtyard and cathedral environment" loading="lazy" decoding="async">
         <h4 class="font-medium">Ashen Chapel</h4>
@@ -399,6 +405,32 @@
         <img src="./images/other-03.jpg" class="w-full mb-6" width="9524" height="6735" alt="Other Works — sheet 3" loading="lazy" decoding="async">
       `,
 
+      p11: `
+        <h2 class="text-2xl mb-6">Gameplay Demo Validation</h2>
+
+        <div class="demo-section">
+          <h3 class="text-lg mb-2">Spatial Reconstruction Puzzle Demo</h3>
+          <video class="project-video" controls playsinline preload="metadata" poster="./images/gameplay-demo-level-2-poster.jpg" width="1280" height="720">
+            <source src="./videos/level-2-gameplay-demo.mp4" type="video/mp4">
+            Your browser cannot play this video. <a href="./videos/level-2-gameplay-demo.mp4">Download the gameplay demo</a>.
+          </video>
+          <p class="text-gray-600">
+            是一套以空间观察、方块搬运与路径重构为核心的 2.5D 立体解谜关卡。玩家需要操作旋转桥、可搬运方块、收纳架、梯子与升降平台，在四层高度之间建立通路。关卡包含两条相对独立的解法：一条侧重搬运方块与调整高空转桥，另一条通过装载配重启动塔式升降台；玩家也可以利用中层捷径组合两条路线。整个 Demo 重点验证了机关之间的连锁关系、多路线探索、垂直空间利用，以及操作失误后的可恢复性。
+          </p>
+        </div>
+
+        <div class="demo-section">
+          <h3 class="text-lg mb-2">Photo Reconstruction Puzzle Demo</h3>
+          <video class="project-video" controls playsinline preload="metadata" poster="./images/gameplay-demo-lumen-poster.jpg" width="1600" height="900">
+            <source src="./videos/lumen-expanded-gameplay.mp4" type="video/mp4">
+            Your browser cannot play this video. <a href="./videos/lumen-expanded-gameplay.mp4">Download the gameplay demo</a>.
+          </video>
+          <p class="text-gray-600">
+            是一款以“拍照、复制与重构场景”为核心的第一人称解谜探索 Demo。玩家可以将场景物体拍成照片，再通过旋转与显影，把照片中的物体重新放入世界，用于搭建通路、跨越障碍和触发机关；也可以将场景生物收容为卡牌，在不同位置释放并利用其能力解谜。核心体验在于观察环境、识别可用资源，并通过反复回收、转移与组合，让同一份资源解决不同的空间难题。
+          </p>
+        </div>
+      `,
+
       p8: `
         <h2 class="text-2xl mb-6">Ashen Chapel</h2>
         <p class="text-sm text-gray-400 mb-6">Environment Scene · Blender</p>
@@ -568,7 +600,8 @@
       pageScroll = window.scrollY;
       modalContent.innerHTML = projects[id];
       modalContent.querySelector('h2').id = 'project-title';
-      modalContent.querySelector('img').loading = 'eager';
+      const firstImage = modalContent.querySelector('img');
+      if (firstImage) firstImage.loading = 'eager';
       // Lock the page without losing the visitor's position on mobile.
       document.body.style.top = '-' + pageScroll + 'px';
       document.body.classList.add('project-open');

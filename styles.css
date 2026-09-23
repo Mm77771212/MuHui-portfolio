@@ -83,6 +83,7 @@ body.project-open { position: fixed; width: 100%; overflow: hidden; }
 #modal-content .figure-caption { margin: 8px 0 32px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 #modal-content .project-video { margin-bottom: clamp(20px, 3vw, 32px); }
 #modal-content .mb-6 { margin-bottom: clamp(20px, 3vw, 32px); }
+#modal-content .demo-section + .demo-section { margin-top: clamp(44px, 7vw, 72px); }
 @media (max-width: 600px) {
   .site-nav { min-height: 64px; }
   .site-nav h1 { font-size: 14px; }
