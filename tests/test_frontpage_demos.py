@@ -1,4 +1,3 @@
-import re
 import unittest
 from pathlib import Path
 
@@ -11,8 +10,16 @@ class FrontpageDemoTests(unittest.TestCase):
     def test_new_demo_cards_precede_existing_demo_card(self):
         html = HTML.read_text(encoding="utf-8")
         game_section = html.split("Game &amp; Level Design", 1)[1].split("Urban Research", 1)[0]
-        self.assertLess(game_section.index('data-project="p12"'), game_section.index('data-project="p13"'))
-        self.assertLess(game_section.index('data-project="p13"'), game_section.index('data-project="p11"'))
+        self.assertLess(game_section.index('data-project="p13"'), game_section.index('data-project="p12"'))
+        self.assertLess(game_section.index('data-project="p12"'), game_section.index('data-project="p11"'))
+
+    def test_temple_title_is_english_only_on_card_and_in_modal(self):
+        html = HTML.read_text(encoding="utf-8")
+        card = html.split('data-project="p12"', 1)[1].split("</a>", 1)[0]
+        modal = html.split("p12: `", 1)[1].split("`,", 1)[0]
+        for section in (card, modal):
+            self.assertIn("Temple of Thunder Demo", section)
+            self.assertNotIn("雷之神殿", section)
 
     def test_new_demos_have_playable_modal_videos_and_posters(self):
         html = HTML.read_text(encoding="utf-8")
